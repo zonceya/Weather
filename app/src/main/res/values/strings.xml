@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">Weather App</string>
+
+    <string name="please_wait">Please Wait&#8230;</string>
+
+    <!--TODO (STEP 4: All the string values are added here.)-->
+    <!--START-->
+    <string name="image_contentDescription">image</string>
+    <string name="miles_per_hour">miles/hour</string>
+    <string name="action_refresh">action_refresh</string>
+    <string name="cloud">02d</string>
+    <string name="sunny">01d</string>
+    <string name="sunnys">02d</string>
+
+    <!--END-->
+</resources>

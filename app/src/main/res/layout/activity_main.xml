@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_screen_content_background_color"
+    android:orientation="vertical"
+    android:padding="@dimen/main_screen_content_padding"
+    tools:context=".activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forest"
+        android:id="@+id/rl"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_temp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_degre"
+            tools:text="Degree" />
+
+        <TextView
+            android:id="@+id/tv_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Weather" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forest"
+        android:id="@+id/color2"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_min"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Min" />
+
+        <TextView
+            android:id="@+id/tv_current"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Current" />
+        <TextView
+            android:id="@+id/tv_max"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Max" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/forest"
+        android:id="@+id/color1"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_forecastmin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:layout_weight="1"
+            android:text="Min"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Min" />
+        <TextView
+            android:id="@+id/tv_names"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Current"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Current" />
+        <TextView
+            android:id="@+id/tv_forecastmax"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="Max"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+                      tools:text="Max" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/color23"
+        android:orientation="horizontal">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/forest"
+        tools:itemCount="5"
+        tools:listitem="@layout/recycleview" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/forest"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:gravity="start"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            android:textStyle="bold"
+            tools:text="Min" />
+        <ImageView
+            android:id="@+id/iv_main"
+            android:layout_width="@dimen/identification_image_size"
+            android:layout_height="@dimen/identification_image_size"
+            android:layout_marginEnd="@dimen/identification_image_marginEnd"
+            android:contentDescription="@string/image_contentDescription"
+            app:srcCompat="@drawable/snowflake"
+            tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/label_text_size"
+            tools:text="Max" />
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
