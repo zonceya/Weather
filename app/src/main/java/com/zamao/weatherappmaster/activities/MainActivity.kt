@@ -43,15 +43,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 
 
-// OpenWeather Link : https://openweathermap.org/api
-/**
- * The useful link or some more explanation for this app you can checkout this link :
- * https://medium.com/@sasude9/basic-android-weather-app-6a7c0855caf4
- */
 class MainActivity : AppCompatActivity() {
     private val itemsList = ArrayList<ForecastList>()
     private lateinit var customAdapter: CustomAdapter
-    // A fused location client variable which is further user to get the user's current location
     private lateinit var mFusedLocationClient: FusedLocationProviderClient
     private var mProgressDialog: Dialog? = null
     private lateinit var  forecastSharedPreferences : SharedPreferences
@@ -63,9 +57,7 @@ class MainActivity : AppCompatActivity() {
         customAdapter = CustomAdapter(itemsList)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerview.layoutManager = layoutManager
-
         recyclerview.adapter = customAdapter
-     //   val myDataset = Datasource().Images()
         loadImage()
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -83,7 +75,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_SHORT
             ).show()
 
-            // This will redirect you to settings from where you need to turn on the location provider.
             val intent = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
             startActivity(intent)
         } else {
@@ -144,12 +135,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun showCustomProgressDialog() {
         mProgressDialog = Dialog(this)
-
-        /*Set the screen content from a layout resource.
-        The resource will be inflated, adding all top-level views to the screen.*/
         mProgressDialog!!.setContentView(R.layout.dialog_custom_progress)
-
-        //Start the dialog and display it on screen.
         mProgressDialog!!.show()
     }
 
@@ -173,10 +159,6 @@ class MainActivity : AppCompatActivity() {
                 var tv_min = findViewById<TextView>(R.id.tv_min)
                 var tv_max = findViewById<TextView>(R.id.tv_max)
                 var tv_name = findViewById<TextView>(R.id.tv_date)
-               if( weatherList.weather.contains("Rain")){
-                   var zama = 0
-               }
-
                 if (weatherList.weather[z].main == "Rain")
                 {
                     var   relativeLayout = findViewById<LinearLayout>(R.id.rl)
@@ -206,7 +188,6 @@ class MainActivity : AppCompatActivity() {
                 Log.i("NAMEEEEEEEE", weatherList.weather[z].main)
                 tv_main.text = weatherList.weather[z].main
                 var iv_main = findViewById<ImageView>(R.id.iv_main)
-                //tv_main_description.text = weatherList.weather[z].description
                 if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
                     tv_temp.text =
                         weatherList.main.temp.toString() + getUnit(application.resources.configuration.locales.toString())
@@ -216,7 +197,6 @@ class MainActivity : AppCompatActivity() {
                 }
                 tv_humidity.text = weatherList.main.humidity.toString() + " per cent"
 
-                // Here we update the main icon
                 when (weatherList.weather[z].icon) {
                     "02d" -> iv_main.setImageResource(R.drawable.partlysunny)
                     "01d" -> iv_main.setImageResource(R.drawable.clear)
@@ -242,9 +222,6 @@ class MainActivity : AppCompatActivity() {
         // prepareItems()
         var tv_temp = findViewById<TextView>(R.id.tv_temp)
         var tv_current = findViewById<TextView>(R.id.tv_current)
-       // var iv_main = findViewById<ImageView>(R.id.iv_main)
-
-
         var forecastResponseJsonString =
             forecastSharedPreferences.getString(Constants.FORECAST_RESPONSE_DATA, "")
 
@@ -305,9 +282,6 @@ class MainActivity : AppCompatActivity() {
             // END
         }
     }
-    /**
-     * The function is used to get the formatted time based on the Format and the LOCALE we pass to it.
-     */
     private fun unixTime(timex: Long): String? {
 
         val sdf = java.text.SimpleDateFormat("EEEE")
@@ -435,7 +409,6 @@ class MainActivity : AppCompatActivity() {
                 }
 
             })
-            // END
 
         } else {
             Toast.makeText(

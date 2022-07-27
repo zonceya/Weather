@@ -6,11 +6,6 @@ class Datasource() {
 
     fun Images(): List<Imagess> {
         return listOf<Imagess>(
-
-
-
-
-
         )
     }
 }
